@@ -1,0 +1,47 @@
+@use './components/flex' as f;
+@use './components/input' ;
+
+.main {
+    @include f.flex(row, center, space-evenly);
+
+    background: url("https://images.pexels.com/photos/7130475/pexels-photo-7130475.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+
+    &__form {
+        &--head {
+            color: #000;
+            text-align: center;
+        }
+    }
+
+    &__frame {
+
+        &--img {
+        border-radius : 46px;
+        }
+    }
+
+    &__form {
+        
+        @include f.flex(column, none, space-evenly);
+        height:47%;
+
+        &--user,
+        &--pass {
+            
+            outline : none;
+
+        }
+
+        &--button {
+            
+            // @include f.flex(column, center, center);
+            
+            & > input[type = "submit"] {
+                width: 100%;
+            }
+
+        }
+
+    }
+
+}

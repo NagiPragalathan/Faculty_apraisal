@@ -1,0 +1,10 @@
+
+@mixin flex($dir, $al, $jus) {
+
+    height : 100%;
+    display : flex;
+    flex-direction : $dir;
+    align-items: $al;
+    justify-content: $jus;
+
+}

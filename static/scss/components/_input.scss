@@ -1,0 +1,10 @@
+input[type="email"],
+input[type = "password"] {
+    // border-radius : 20px;
+    outline : none;
+    border: none;
+    border-bottom : groove;
+
+    background: #85858500;
+
+}
