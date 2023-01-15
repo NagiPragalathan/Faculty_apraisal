@@ -1,5 +1,5 @@
 from django.db import models
-
+import datetime
 # Create your models here.
 
                             # Faculty_details
@@ -12,16 +12,17 @@ class Users(models.Model):
     role        = models.IntegerField()   # roles {1,2,3} 1(Admin), 2(HOD), 3(Staff)
 
 class Faculty_details(models.Model):
-    role = models.ForeignKey(Users, on_delete=models.CASCADE)
-    id_number = models.IntegerField(unique=True)
-    image           = models.ImageField(upload_to='photo/%Y/%m/%d')
-    name            = models.CharField(max_length = 200)
-    designation     = models.CharField(max_length = 200)
-    date_of_join    = models.DateField()
-    department      = models.CharField(max_length = 200)
-    qualififcation  = models.CharField(max_length = 200)
-    assessment_period = models.IntegerField() # auto update....
-    experience      = models.IntegerField()
+    id              = models.IntegerField(primary_key=True)
+    role            = models.ForeignKey(Users, on_delete=models.CASCADE)
+    id_number       = models.IntegerField()
+    image           = models.ImageField(upload_to='photo/%Y/%m/%d',default='images/Screenshot_3.png')
+    name            = models.CharField(max_length = 200,unique=True)
+    designation     = models.CharField(max_length = 200,default='designation')
+    date_of_join    = models.DateField(default=datetime.datetime.now())
+    department      = models.CharField(max_length = 200,default='department')
+    qualififcation  = models.CharField(max_length = 200,default='qualififcation')
+    assessment_period = models.IntegerField(default=0) # auto update....
+    experience      = models.IntegerField(default=0)
 
 
                             # Internal test evaluation 

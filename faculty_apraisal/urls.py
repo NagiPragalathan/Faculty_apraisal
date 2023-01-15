@@ -46,7 +46,8 @@ staff_path = [
 ]
 
 home = [
-    path('staff_home',views.staff_home)
+    path('staff_home',views.staff_home),
+    path('test',views.view_usr)
 ]
 
 login_path = [

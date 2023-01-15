@@ -1,0 +1,19 @@
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hi</h1>
+    {% for i in usr %}
+        <h1>{{ i.id }}</h1>
+        <h1>{{ i.user_name }}</h1>
+        <h1>{{ i.id_number }}</h1>
+        <h1>{{ i.experience }}</h1>
+
+    {% endfor %}
+</body>
+</html>

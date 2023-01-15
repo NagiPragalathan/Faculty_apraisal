@@ -11,8 +11,10 @@ def home(request):
     return render(request,"dashboard/dashboard.html")
 
 def tables(request):
-    return render(request,"dashboard/tables.html")
-
+    facultys = Faculty_details.objects.all()
+    for i in facultys:
+        print(i.name)
+    return render(request,"dashboard/tables.html",{'users':facultys})
 def profile(request):
     return render(request,"dashboard/profile.html")
 
@@ -23,8 +25,8 @@ def billing(request):
 def staff_home(request):
     usr_id = request.user.id
     usr_obj = User.objects.get(id=usr_id)
-    length = len(Faculty_details.objects.all())
-    faculty_details = Faculty_details.objects.get(id=length)
+    name = Users.objects.get(user_name=usr_obj.username)
+    faculty_details = Faculty_details.objects.get(role=name)
     return render(request,"home/home_page.html",{'user_name':usr_obj.username,'detials':faculty_details})
 
 def login_page(request):
@@ -57,7 +59,8 @@ def add_staff_hod(request):
 def Personal_detials(request):
     usr_id = request.user.id
     usr_obj = User.objects.get(id=usr_id)
-    faculty_details = Faculty_details.objects.all()
+    name = Users.objects.get(user_name=usr_obj.username)
+    faculty_details = Faculty_details.objects.get(role=name)
     # request and get datas ..............
     role = Users.objects.get(user_name = usr_obj.username)
     id_number = request.POST.get('idcard')
@@ -79,24 +82,29 @@ def Personal_detials(request):
                                    assessment_period=assessment_period, date_of_join=date_formate, image = my_uploaded_file
                                   )
     add_detials.save()
-    detials = Faculty_details.objects.all()
-    for i in detials:
-        print(i.name,i.date_of_join,i.image.path)
     return render(request,"home/home_page.html",{'user_name':usr_obj.username,'detials':faculty_details})
 
 
 
 def add_usr(request):
     usr_name = request.POST.get('user_name')
-    password = request.POST.get('password')
+    password = request.POST.get('mail')
     role = request.POST.get('roles')
-    mail = request.POST.get('mail')
-    try :
-        add_user = Users(user_name=usr_name,mail_id=mail,password=password,role=role)
-        add_user.save()
-        user = User.objects.create_user(usr_name, mail, password)
-        user.save()
-    except:
-        print("The value already exist....")
+    mail = request.POST.get('password')
+
+    add_user = Users(user_name=usr_name,mail_id=mail,password=password,role=role)
+    add_user.save()
+    current_user = Users.objects.get(user_name=usr_name)
+    Fac_del = Faculty_details(role=current_user, id_number=0, name=add_user.user_name)
+    Fac_del.save()
+    user = User.objects.create_user(usr_name, mail, password)
+    user.save()
+
     return render(request,"dashboard/tables.html")
 
+def view_usr(request):
+    fac = Faculty_details.objects.all()
+    print(len(fac))
+    # Fac_del = Faculty_details(role=request.user.id, id_number=0, name=request.user.username, user_name=request.user.username)
+    # Fac_del.save()
+    return render(request,"sample/view.html",{'usr':fac})
