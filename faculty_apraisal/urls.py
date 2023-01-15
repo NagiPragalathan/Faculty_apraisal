@@ -16,7 +16,37 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from base import views
-urlpatterns = [
+
+urlpatterns = []     
+
+def Path_manager(Paths):
+    Stack_Path = []
+    for i in Paths:
+        for j in i:
+            Stack_Path.append(j)
+    return Stack_Path
+
+admin_path = [
     path('admin/', admin.site.urls),
-    path('',views.home)
+    path('Admin/Admin_home/',views.home),
+    path('Admin/profile/',views.profile),
+    path('Admin/billing/',views.billing),
+    path('Admin/tables/',views.tables),
 ]
+
+admin_actions = [
+    path('add_staff',views.add_staff_hod),
+    path('Admin/tables/add_usr',views.add_usr)
+]
+
+home = [
+    path('staff_home',views.staff_home)
+]
+
+login_path = [
+    path('',views.login_page),
+    path('login_to_home',views.login_into_home),
+]
+
+
+urlpatterns = Path_manager([admin_path,login_path,admin_actions,home])

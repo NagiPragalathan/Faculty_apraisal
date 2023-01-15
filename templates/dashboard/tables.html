@@ -104,7 +104,7 @@
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-single-copy-04 text-warning text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">Sign In</span>
+            <span class="nav-link-text ms-1">Log Out</span>
           </a>
         </li>
         <li class="nav-item">
@@ -137,8 +137,8 @@
       <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href=" {% static 'javascript:;' %} ">Pages</a></li>
-            <li class="breadcrumb-item text-sm text-white active" aria-current="page">Tables</li>
+            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href=" {% static 'javascript:;' %} ">Admin</a></li>
+            <li class="breadcrumb-item text-sm text-white active" aria-current="page">Users List</li>
           </ol>
           <h6 class="font-weight-bolder text-white mb-0">Tables</h6>
         </nav>
@@ -247,13 +247,69 @@
         </div>
       </div>
     </nav>
+
+    
+
+
     <!-- End Navbar -->
     <div class="container-fluid py-4">
       <div class="row">
         <div class="col-12">
           <div class="card mb-4">
+            <div>
+              <div class="container mt-5 mb-5 d-flex justify-content-center">
+                <div class="card px-1 py-4">
+                  {% csrf_token %}
+                  <form action="add_usr" method="post">
+                  {% csrf_token %}
+                    <div class="card-body">
+                        <h5 class="card-title mb-3">Add New User</h5>
+                            <h6 class="information mt-4">Please provide following information about New User</h6>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <!-- <label for="name">Name</label> --> <input class="form-control" name="user_name" type="text" placeholder="UserName"> </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="input-group"> <input class="form-control" type="text" name="password" placeholder="Email ID"> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="input-group"> <input class="form-control" type="text" name="mail" placeholder="password"> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <class class="row">
+                              <div class="col-sm-12">
+                                  <div class="form-group">
+                                      <label for="cars">Choose a role:</label>
+                                      <div class="input-group"> <select class="form-control" id="cars" name="roles">
+                                        <option value="3">Staff</option>
+                                        <option value="2">HOD</option>
+                                        <option value="1">Admin</option>
+                                    </select> </div>
+                                  </div>
+                              </div>
+                            </class>
+                          
+                      </div>
+                        <div class=" d-flex flex-column text-center px-5 mt-3 mb-3"> <small class="agree-text">warning! : if you select "Admin" The new admin can also able to access the Admin Dashboard  </small> <h6 class="terms">Also check the given information are correct.</h6> </div> 
+            {% csrf_token %}
+                        
+                        <input type="submit" value="Confirm" class="btn btn-primary btn-block confirm-button">
+                    </div>
+                  </form>
+                </div>
+            </div>
+            </div>
             <div class="card-header pb-0">
-              <h6>Authors table</h6>
+              <h6>HOD's List</h6>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">

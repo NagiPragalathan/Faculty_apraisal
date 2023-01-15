@@ -1,1 +1,5 @@
 django
+
+
+blue - #032ded
+orange = #fe3f40
