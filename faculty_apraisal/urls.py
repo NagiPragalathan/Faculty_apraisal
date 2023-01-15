@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from base import views
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = []     
 
@@ -39,6 +41,10 @@ admin_actions = [
     path('Admin/tables/add_usr',views.add_usr)
 ]
 
+staff_path = [
+    path('personal_detials',views.Personal_detials),
+]
+
 home = [
     path('staff_home',views.staff_home)
 ]
@@ -49,4 +55,7 @@ login_path = [
 ]
 
 
-urlpatterns = Path_manager([admin_path,login_path,admin_actions,home])
+urlpatterns = Path_manager([admin_path,login_path,admin_actions,home,staff_path])
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
