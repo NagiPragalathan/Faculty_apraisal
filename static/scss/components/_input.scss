@@ -3,7 +3,9 @@ input[type = "password"] {
     // border-radius : 20px;
     outline : none;
     border: none;
-    border-bottom : groove;
+    border-bottom : 1px solid #66dbdfd8;
+
+    caret-color: #ffbb00;
 
     background: #85858500;
 

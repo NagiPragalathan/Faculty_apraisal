@@ -1,29 +1,41 @@
 @use './components/flex' as f;
+@use './components/var' as v;
 @use './components/input' ;
+@use './components/btns';
+
+
+form {
+    height:55%;
+    @include f.flex(column, center, center)
+}
 
 .main {
+
+    height: 100%;
+
     @include f.flex(row, center, space-evenly);
 
-    background: url("https://images.pexels.com/photos/7130475/pexels-photo-7130475.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background: linear-gradient(45deg, v.$blue, v.$orange_red);
 
     &__form {
+
+        @include f.grid(space-evenly, none, center, none);
+        
         &--head {
             color: #000;
             text-align: center;
         }
-    }
-
-    &__frame {
-
+        
+        &__frame {
+            
         &--img {
         border-radius : 46px;
         }
     }
 
-    &__form {
         
-        @include f.flex(column, none, space-evenly);
-        height:47%;
+        // @include f.flex(column, none, space-evenly);
+        height:85%;
 
         &--user,
         &--pass {
@@ -34,14 +46,24 @@
 
         &--button {
             
-            // @include f.flex(column, center, center);
+            @include f.flex(column, center, space-evenly);
             
-            & > input[type = "submit"] {
-                width: 100%;
-            }
+        }
+        
+        &--links{
+
+            @include f.flex(row, auto, space-around);
+            width : 100%
 
         }
 
     }
 
+}
+
+
+#know_me {
+
+    outline: none;
+    accent-color: #ff000000;
 }
