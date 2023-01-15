@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+</style>
+<body>
+    <div>
+        <h1>add staff (or) HOD's</h1>
+        <form action="add_usr" method="post" class="form">
+            {% csrf_token %}    
+            <input type="text" name="user_name">
+            <input type="text" name="password">
+            <input type="email" name="mail">
+            <label for="cars">Choose a role:</label>
+            <select id="cars" name="roles">
+                <option value="3">staff</option>
+                <option value="2">HOD</option>
+                <option value="1">New Admin</option>
+            </select>
+            <input type="submit" value="add">
+        </form>
+    </div>
+</body>
+</html>
