@@ -14,7 +14,7 @@ class Users(models.Model):
 class Faculty_details(models.Model):
     role = models.ForeignKey(Users, on_delete=models.CASCADE)
     id_number = models.IntegerField(unique=True)
-    image           = models.ImageField(upload_to='images')
+    image           = models.ImageField(upload_to='photo/%Y/%m/%d')
     name            = models.CharField(max_length = 200)
     designation     = models.CharField(max_length = 200)
     date_of_join    = models.DateField()
