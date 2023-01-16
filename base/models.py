@@ -13,9 +13,11 @@ class Users(models.Model):
 
 class Faculty_details(models.Model):
     id              = models.IntegerField(primary_key=True)
+    user_name   = models.CharField(max_length = 200,unique=True)
     role            = models.ForeignKey(Users, on_delete=models.CASCADE)
-    id_number       = models.IntegerField()
     image           = models.ImageField(upload_to='photo/%Y/%m/%d',default='images/Screenshot_3.png')
+
+    id_number       = models.IntegerField()
     name            = models.CharField(max_length = 200,unique=True)
     designation     = models.CharField(max_length = 200,default='designation')
     date_of_join    = models.DateField(default=datetime.datetime.now())
@@ -23,15 +25,21 @@ class Faculty_details(models.Model):
     qualififcation  = models.CharField(max_length = 200,default='qualififcation')
     assessment_period = models.IntegerField(default=0) # auto update....
     experience      = models.IntegerField(default=0)
+    bio             = models.CharField(max_length = 200,default='No Bio yet.')
 
 
                             # Internal test evaluation 
 
 class Subjects(models.Model):
+    subject_image = models.CharField(max_length = 200)
     subject_name  = models.CharField(max_length = 200,unique=True)
     subject_code  = models.CharField(max_length = 200,unique=True)
+    semester = models.IntegerField()
+    department = models.CharField(max_length = 200)
+    discription = models.CharField(max_length = 200,default='No Discription yet.')
 
 class Subject_handled(models.Model):
+    faculty_id    = models.IntegerField()
     subject_staff = models.ForeignKey(Faculty_details, on_delete=models.CASCADE)
     subject_name  = models.CharField(max_length = 200,unique=True)
     subject_code  = models.CharField(max_length = 200,unique=True)

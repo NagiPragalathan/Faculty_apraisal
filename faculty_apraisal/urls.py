@@ -31,18 +31,22 @@ def Path_manager(Paths):
 admin_path = [
     path('admin/', admin.site.urls),
     path('Admin/Admin_home/',views.home),
-    path('Admin/profile/',views.profile),
+    path('profile',views.profile,name='profile'),
     path('Admin/billing/',views.billing),
     path('Admin/tables/',views.tables),
 ]
 
 admin_actions = [
     path('add_staff',views.add_staff_hod),
-    path('Admin/tables/add_usr',views.add_usr)
+    path('Admin/tables/add_usr',views.add_usr),
+    path('add_subject',views.add_subject),
+    path('save_subject',views.save_subject),
 ]
 
 staff_path = [
     path('personal_detials',views.Personal_detials),
+    path('select_subject',views.select_subject),
+
 ]
 
 home = [

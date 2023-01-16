@@ -74,13 +74,25 @@
     justify-content: center;
     align-items: center;
 }
+#result1{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background: #fe3f40;
+    padding: 10px;
+    border: 2px solid black;
+}
     </style>
     
 <div class="container contact-form">
             <div class="contact-image">
                 <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
             </div>
-            <form method="post">
+            <form method="post" action="save_subject">
+                {% csrf_token %}
                 <h3>Update Subject Detials</h3>
                <div class="row">
                     <div class="col-md-6">
@@ -88,27 +100,27 @@
                             <input type="text" name="txtName" class="form-control" placeholder="Subject Name *" value="" />
                         </div>
                         <div class="form-group">
-                            <input type="text" name="txtEmail" class="form-control" placeholder="Subject Code *" value="" />
+                            <input type="text" name="subcode" class="form-control" placeholder="Subject Code *" value="" />
                         </div>
                         <div class="form-group">
-                            <input type="text" name="txtPhone" class="form-control" placeholder="Semester *" value="" />
+                            <input type="text" name="sem" class="form-control" placeholder="Semester *" value="" />
                         </div>
                         <div class="form-group">
-                            <input type="text" name="txtPhone" class="form-control" placeholder="department *" value="" />
+                            <input type="text" name="dep" class="form-control" placeholder="department *" value="" />
                         </div>
                         <div class="form-group">
-                            <input type="submit" name="btnSubmit" class="btnContact" value="discription" />
+                            <input type="submit" name="btnSubmit" class="btnContact" value="Add" />
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <textarea name="txtMsg" class="form-control" placeholder="Your Message *" style="width: 100%; height: 150px;"></textarea>
+                            <textarea name="dis" class="form-control" placeholder="Discription" style="width: 100%; height: 150px;"></textarea>
                         </div>
                     </div>
                 </div>
             </form>
             <div class="row" id="result">
-                <div class="col-md-12" id="result">
+                <div class="col-md-12" id="result1">
                     <table>
                             <th>subject</th>
                             <th>subject code</th>
