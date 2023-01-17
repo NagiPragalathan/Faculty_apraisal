@@ -46,7 +46,10 @@ admin_actions = [
 staff_path = [
     path('personal_detials',views.Personal_detials),
     path('select_subject',views.select_subject),
-
+    path('add_sub',views.add_sub),
+    path('rm_sub',views.rm_sub),
+    path('guest_lecture',views.guest_lecture),
+    path('add_guest_lecture',views.add_guest_lecture),
 ]
 
 home = [
@@ -57,6 +60,7 @@ home = [
 login_path = [
     path('',views.login_page),
     path('login_to_home',views.login_into_home),
+    path('logout',views.sign_out)
 ]
 
 
@@ -64,3 +68,4 @@ urlpatterns = Path_manager([admin_path,login_path,admin_actions,home,staff_path]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)
+                          
