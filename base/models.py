@@ -1,5 +1,6 @@
 from django.db import models
 import datetime
+from django.utils import timezone
 # Create your models here.
 
                             # Faculty_details
@@ -20,7 +21,7 @@ class Faculty_details(models.Model):
     id_number       = models.IntegerField()
     name            = models.CharField(max_length = 200,unique=True)
     designation     = models.CharField(max_length = 200,default='designation')
-    date_of_join    = models.DateField(default=datetime.datetime.now())
+    date_of_join    = models.DateField(default=timezone.now())
     department      = models.CharField(max_length = 200,default='department')
     qualififcation  = models.CharField(max_length = 200,default='qualififcation')
     assessment_period = models.IntegerField(default=0) # auto update....
@@ -41,10 +42,10 @@ class Subjects(models.Model):
 class Subject_handled(models.Model):
     faculty_id    = models.IntegerField()
     subject_staff = models.ForeignKey(Faculty_details, on_delete=models.CASCADE)
-    subject_name  = models.CharField(max_length = 200,unique=True)
-    subject_code  = models.CharField(max_length = 200,unique=True)
-    target_pass   = models.CharField(max_length = 200)
-    actual_pass   = models.CharField(max_length = 200)
+    subject_name  = models.CharField(max_length = 200)
+    subject_code  = models.CharField(max_length = 200)
+    target_pass   = models.CharField(max_length = 200,default='10')
+    actual_pass   = models.CharField(max_length = 200,default='10')
 
 class Test_evaluation(models.Model):
     subject_detials = models.ForeignKey(Subject_handled, on_delete=models.CASCADE) # it's can be access to subject.name, subject.code
@@ -52,12 +53,30 @@ class Test_evaluation(models.Model):
     target_pass     = models.CharField(max_length = 200)
     actual_pass     = models.CharField(max_length = 200)
 
+class Details(models.Model):
+    faculty_id = models.IntegerField()
+    image = models.ImageField(upload_to='photo/%Y/%m/%d',default='images/user_image.png')
+    name = models.CharField(max_length = 200)
+    date = models.DateField(default=timezone.now())
+    designation = models.CharField(max_length = 200)
+    topic = models.CharField(max_length = 200)
+    coming_from = models.CharField(max_length = 200)
+    mail_id = models.CharField(max_length = 200)
 
-                                # BLOCK DEPT. ACT
+class IV_Details(models.Model):
+    name = models.CharField(max_length = 200)
+    place = models.CharField(max_length = 200)
+    no_of_stu = models.IntegerField()
+    IV_detials = models.CharField(max_length = 200)
+    date = models.DateField(default=timezone.now())
+    faculty_detials = models.CharField(max_length = 200)
+
+                                    # BLOCK DEPT. ACT
 class Guest_lecture(models.Model):
+    faculty_id = models.IntegerField()
     target = models.IntegerField()
     achieved = models.IntegerField()
-    details  = models.CharField(max_length=200)
+    details = models.ForeignKey(Details, on_delete=models.CASCADE)
 
 class Iv_arrangement(models.Model):
     target = models.IntegerField()
