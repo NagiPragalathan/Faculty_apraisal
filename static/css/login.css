@@ -1,6 +1,7 @@
 input[type=email],
 input[type=password] {
   outline: none;
+  width: 70%;
   border: none;
   border-bottom: 1px solid rgba(102, 219, 223, 0.8470588235);
   caret-color: #ffbb00;
@@ -23,6 +24,7 @@ button:hover {
 
 form {
   height: 55%;
+  width: 30%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -53,6 +55,10 @@ form {
   border-radius: 46px;
 }
 .main__form--user, .main__form--pass {
+  display: flex;
+  flex-direction: row;
+  align-items: none;
+  justify-content: none;
   outline: none;
 }
 .main__form--button {

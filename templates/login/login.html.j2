@@ -8,16 +8,17 @@
         <div class = "main__frame">
             <img src = "https://unsplash.it/300/300" class = "main__frame--img" />
         </div>
-        <form method = "GET">
+        <form method = "GET" class = "needs-validation" >
             <div class = "main__form container">
                 
                 <h2 class = "main__form--head">LogIn</h2>
                 <div class = "main__form--user">
-                    <input type = "email" name = "email" placeholder = "Username"  autocomplete = "off" class = "mail__form--user__ip" required/>
+                    <input type = "email" name = "email" placeholder = "Username"  autocomplete = "off" class = "mail__form--user__ip form-control" id = "inputs"  required/>
+                    <span class = "input-group-append">@gmail.com</span>
                 </div>
                 
                 <div class = "main__form--pass">
-                    <input type = "password" name = "password" placeholder = "Password" autocomplete = "off" class = "mail__form--pass__ip" required/>
+                    <input type = "password" name = "password" placeholder = "Password" autocomplete = "off" class = "mail__form--pass__ip form-control" id = "inputs"  required/>
                     <i class = "fas fa-eye-slash eye" onclick = "pass()"></i>
                 </div>
                 
