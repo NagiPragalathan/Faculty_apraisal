@@ -11,9 +11,6 @@ from bing_image_downloader import downloader
 
 @login_required(login_url='/Admin/')
 def home(request):
-<<<<<<< HEAD
-    return render(request,"login/login.html.j2")
-=======
     return render(request,"dashboard/dashboard.html")
 
 def tables(request):
@@ -58,7 +55,7 @@ def staff_home(request):
     return render(request,"home/home_page.html",{'user_name':usr_obj.username,'detials':faculty_details})
 
 def login_page(request):
-    return render(request,"sample/login.html")
+    return render(request,"login/login.html.j2")
 
 def sign_out(request):
     logout()
@@ -289,4 +286,3 @@ def add_IV(request):
 
     return render(request,"staff/Guest_lecture.html",{'details':details})
 
->>>>>>> f597f0a36ed392a291f230b14ea86ce94183c484
