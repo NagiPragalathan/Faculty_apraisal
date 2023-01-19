@@ -30,14 +30,13 @@ def Path_manager(Paths):
 
 admin_path = [
     path('admin/', admin.site.urls),
-<<<<<<< HEAD
-    path('login',views.home)
-=======
+    path('login',views.home),
+
     path('Admin/Admin_home/',views.home),
     path('profile',views.profile,name='profile'),
     path('Admin/billing/',views.billing),
     path('Admin/tables/',views.tables),
->>>>>>> f597f0a36ed392a291f230b14ea86ce94183c484
+
 ]
 
 admin_actions = [
