@@ -1,0 +1,74 @@
+@use './components/flex' as f;
+@use './components/var' as v;
+@use './components/input' ;
+@use './components/btns';
+
+
+
+form {
+    height:55%;
+    width : 30%;
+    
+    @include f.flex(column, center, center)
+}
+
+.main {
+
+    height: 100%;
+
+    @include f.flex(row, center, space-evenly);
+
+    background: linear-gradient(45deg, v.$blue, v.$orange_red);
+
+    &__form {
+
+
+        @include f.grid(space-evenly, none, center, none);
+        
+        &--head {
+            color: #000;
+            text-align: center;
+        }
+        
+        &__frame {
+            
+        &--img {
+        border-radius : 46px;
+        }
+    }
+
+        
+        // @include f.flex(column, none, space-evenly);
+        height:85%;
+
+        &--user,
+        &--pass {
+            
+            @include f.flex(row, none, none);
+            outline : none;
+
+        }
+
+        &--button {
+            
+            @include f.flex(column, center, space-evenly);
+            
+        }
+        
+        &--links{
+
+            @include f.flex(row, auto, space-around);
+            width : 100%
+
+        }
+
+    }
+
+}
+
+
+#know_me {
+
+    outline: none;
+    accent-color: #ff000000;
+}

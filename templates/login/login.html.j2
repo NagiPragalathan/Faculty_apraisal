@@ -1,0 +1,49 @@
+{% extends "../login_base.html.j2" %}
+
+{% block content %}
+
+<div>
+
+    <div class = "main container">
+        <div class = "main__frame">
+            <img src = "https://unsplash.it/300/300" class = "main__frame--img" />
+        </div>
+        <form method = "GET" class = "needs-validation" >
+            <div class = "main__form container">
+                
+                <h2 class = "main__form--head">LogIn</h2>
+                <div class = "main__form--user">
+                    <input type = "email" name = "email" placeholder = "Username"  autocomplete = "off" class = "mail__form--user__ip form-control" id = "inputs"  required/>
+                    <span class = "input-group-append">@gmail.com</span>
+                </div>
+                
+                <div class = "main__form--pass">
+                    <input type = "password" name = "password" placeholder = "Password" autocomplete = "off" class = "mail__form--pass__ip form-control" id = "inputs"  required/>
+                    <i class = "fas fa-eye-slash eye" onclick = "pass()"></i>
+                </div>
+                
+                <div class = "main__form--button">
+                    <div class="main__form--chk"><input type = "checkbox" name = "remember_me" id = "know_me"/> <label for = "know_me" class = "main__form--button__label">Remember me</label></div>
+                    <input type = "submit" name = "login" class = "main__form--button__submit">
+                </div>
+
+                <div class = "main__form--links">
+
+                    <a href = "jec__site"> <img src = "https://unsplash.it/30/30" /> </a>
+                    <a href = "jec__yt"> <img src = "https://unsplash.it/30/30" /> </a>
+                    <a href = "jec__insta"> <img src = "https://unsplash.it/30/30" /> </a>
+
+                </div>
+            
+            </div>
+        
+        </form>
+
+
+    
+    </div>
+
+</div> 
+
+
+{% endblock %}

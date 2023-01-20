@@ -55,7 +55,7 @@ def staff_home(request):
     return render(request,"home/home_page.html",{'user_name':usr_obj.username,'detials':faculty_details})
 
 def login_page(request):
-    return render(request,"sample/login.html")
+    return render(request,"login/login.html.j2")
 
 def sign_out(request):
     logout()

@@ -1,0 +1,19 @@
+@use './var' as v;
+
+input[type = "button"],
+input[type="submit"], 
+button {
+
+    outline: none;
+    background: v.$orange_red;
+    border : 1px solid v.$blue; 
+
+    &:hover {
+
+        background : black;
+
+        transition :all 3s ease;
+
+    }
+
+}

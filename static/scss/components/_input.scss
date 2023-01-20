@@ -1,0 +1,17 @@
+@use "./flex" as f;
+
+input[type="email"],
+input[type = "password"] {
+    // border-radius : 20px;
+    outline : none;
+    width : 70%;
+    border: none;
+    border-bottom : 1px solid #66dbdfd8;
+
+    caret-color: #ffbb00;
+
+    background: #85858500;
+
+}
+
+
