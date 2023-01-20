@@ -1,43 +1,67 @@
-input[type=email],
+input[type=text],
 input[type=password] {
   outline: none;
-  width: 70%;
+  max-width: 76%;
+  min-width: 76%;
   border: none;
-  border-bottom: 1px solid rgba(102, 219, 223, 0.8470588235);
+  border-bottom: 1px solid rgba(6, 31, 32, 0.8509803922);
+  border-radius: 0px;
   caret-color: #ffbb00;
   background: rgba(133, 133, 133, 0);
+}
+input[type=text]:active,
+input[type=password]:active {
+  border: none;
+  background: rgba(255, 255, 255, 0);
+}
+
+input[type=checkbox] {
+  border-radius: 20px;
 }
 
 input[type=button],
 input[type=submit],
 button {
   outline: none;
-  background: #fe3f40;
-  border: 1px solid #032ded;
+  background: rgba(145, 138, 138, 0.2509803922);
+  border-radius: 12px;
+  border: 1px solid #1cb5e0;
 }
 input[type=button]:hover,
 input[type=submit]:hover,
 button:hover {
-  background: black;
-  transition: all 3s ease;
+  background: rgba(145, 138, 138, 0.2509803922);
+  border-radius: 12px;
+  box-shadow: 0px 0px 20px 1px rgba(102, 108, 114, 0.6039215686);
+  transition: all 1s ease;
 }
 
 form {
   height: 55%;
   width: 30%;
+  border-radius: 19px;
+  box-shadow: 0px 0px 14px 4px rgba(96, 89, 89, 0.3098039216);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
+body {
+  background: linear-gradient(to right, #1cb5e0, #000046);
+}
+
 .main {
-  height: 100%;
+  height: 91%;
+  position: relative;
+  top: 34px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  background: linear-gradient(45deg, #032ded, #fe3f40);
+  background: rgba(255, 0, 0, 0);
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px 10px rgba(255, 255, 255, 0.6156862745);
 }
 .main__form {
   display: grid;
@@ -50,6 +74,7 @@ form {
 .main__form--head {
   color: #000;
   text-align: center;
+  width: 99%;
 }
 .main__form__frame--img {
   border-radius: 46px;
@@ -57,25 +82,39 @@ form {
 .main__form--user, .main__form--pass {
   display: flex;
   flex-direction: row;
-  align-items: none;
+  align-items: center;
   justify-content: none;
   outline: none;
 }
 .main__form--button {
+  display: content;
+}
+.main__form--chk {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
+  flex-direction: row;
+  align-items: none;
+  justify-content: center;
 }
 .main__form--links {
   display: flex;
   flex-direction: row;
   align-items: auto;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 100%;
 }
 
 #know_me {
   outline: none;
   accent-color: rgba(255, 0, 0, 0);
+}
+
+.btns {
+  display: contents;
+}
+
+.submit {
+  display: flex;
+  flex-direction: row;
+  align-items: none;
+  justify-content: center;
 }

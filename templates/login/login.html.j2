@@ -8,38 +8,37 @@
         <div class = "main__frame">
             <img src = "https://unsplash.it/300/300" class = "main__frame--img" />
         </div>
-        <form method = "GET" class = "needs-validation" >
+        <form method = "POST" class = "needs-validation" action = "login_into_home">
             <div class = "main__form container">
                 
                 <h2 class = "main__form--head">LogIn</h2>
                 <div class = "main__form--user">
-                    <input type = "email" name = "email" placeholder = "Username"  autocomplete = "off" class = "mail__form--user__ip form-control" id = "inputs"  required/>
-                    <span class = "input-group-append">@gmail.com</span>
+                    <input type = "text" name = "usr_name" placeholder = "Username"  autocomplete = "off" class = "mail__form--user__ip form-control" id = "inputs"  required/>
+                    <span class = "input-group-append append">@gmail.com</span>
                 </div>
                 
                 <div class = "main__form--pass">
                     <input type = "password" name = "password" placeholder = "Password" autocomplete = "off" class = "mail__form--pass__ip form-control" id = "inputs"  required/>
-                    <i class = "fas fa-eye-slash eye" onclick = "pass()"></i>
+                    <i class = "fas fa-eye-slash eye"></i>
                 </div>
                 
-                <div class = "main__form--button">
-                    <div class="main__form--chk"><input type = "checkbox" name = "remember_me" id = "know_me"/> <label for = "know_me" class = "main__form--button__label">Remember me</label></div>
-                    <input type = "submit" name = "login" class = "main__form--button__submit">
+                <div class="btns">
+                    <div class = "main__form--button">
+                        <div class="main__form--chk"><input type = "checkbox" name = "remember_me" id = "know_me"/> <label for = "know_me" class = "main__form--button__label">Remember me</label></div>
+                        <div class="submit"><input type = "submit" name = "login" class = "main__form--button__submit"></div>
+                    </div>
                 </div>
 
                 <div class = "main__form--links">
 
-                    <a href = "jec__site"> <img src = "https://unsplash.it/30/30" /> </a>
-                    <a href = "jec__yt"> <img src = "https://unsplash.it/30/30" /> </a>
-                    <a href = "jec__insta"> <img src = "https://unsplash.it/30/30" /> </a>
+                    <a href = "https://jec.ac.in/"> <img src = "https://jec.ac.in/wp-content/themes/Jayacollege_2017/images/logo_fav.png" height = "40" width = "40"/> </a>
+                    <a href = "https://www.youtube.com/user/JayaGroups/featured"> <img src = "/static/assets/yt.jpg" height = "40" width = "57" /> </a>
+                    <a href = "https://www.instagram.com/jayagroupofcolleges/"> <img src = "/static/assets/ins.png" height = "40" width = "40" /> </a>
 
                 </div>
-            
             </div>
         
         </form>
-
-
     
     </div>
 

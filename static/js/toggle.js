@@ -1,12 +1,14 @@
 
-function pass () {
-
-    var input = document.querySelector('.mail__form--pass-ip')
-    var eye = document.querySelector('.eye')
-
-    input.type === "password" ? "text" : "password"
+var input = document.querySelector('.mail__form--pass-ip')
+var eye = document.querySelector('.eye')
 
 
-    // eye.className === "fa-eye" ? "fa-eye-slash" : "fa-eye"
 
-}
+eye.addEventListener("click", function () {
+    const type = input.getAttribute("type")
+
+    type === "password" ? "text" : "password";
+    input.setAttribute("type", type);
+
+    this.classList.toggle("fa-eye");
+});
