@@ -21,6 +21,12 @@ input[type = "password"] {
         background : #ffffff00;
     }
 
+    &:focus {
+        background : #ffffff00;
+        border-color : indianred;
+        box-shadow : none;
+    }
+
 }
 
 input[type = "checkbox"] {

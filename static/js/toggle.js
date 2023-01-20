@@ -1,14 +1,25 @@
 
-var input = document.querySelector('.mail__form--pass-ip')
-var eye = document.querySelector('.eye')
+// $('.eye').on('click', (){
+//     $(this).toggleClass('fa-eye').toggleClass('fa-eye-slash');
 
+//     $('.mail__form--pass-ip').togglePassword();
+// })
 
+    
+function toggle() {
 
-eye.addEventListener("click", function () {
-    const type = input.getAttribute("type")
+    var input = document.querySelector('.mail__form--pass-ip')
+    var eye = document.querySelector('.eye')
 
-    type === "password" ? "text" : "password";
-    input.setAttribute("type", type);
+    if(input.type === "password"){
 
-    this.classList.toggle("fa-eye");
-});
+        input.type = "text"; 
+        eye.classList.toggle("fa-eye");
+
+    }
+    else {
+        input.type = "password";
+        eye.classList.toggle("fa-eye-slash");
+    }
+
+}
