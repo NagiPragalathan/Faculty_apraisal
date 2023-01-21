@@ -1,12 +1,25 @@
 
-function pass () {
+// $('.eye').on('click', (){
+//     $(this).toggleClass('fa-eye').toggleClass('fa-eye-slash');
+
+//     $('.mail__form--pass-ip').togglePassword();
+// })
+
+    
+function toggle() {
 
     var input = document.querySelector('.mail__form--pass-ip')
     var eye = document.querySelector('.eye')
 
-    input.type === "password" ? "text" : "password"
+    if(input.type === "password"){
 
+        input.type = "text"; 
+        eye.classList.toggle("fa-eye");
 
-    // eye.className === "fa-eye" ? "fa-eye-slash" : "fa-eye"
+    }
+    else {
+        input.type = "password";
+        eye.classList.toggle("fa-eye-slash");
+    }
 
 }

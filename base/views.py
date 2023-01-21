@@ -79,7 +79,7 @@ def login_into_home(request):
         elif role == 1:
             return redirect('Admin/Admin_home')
     else:
-        return render(request,"sample/login.html")
+        return render(request,"login/login.html.j2")
         
 
 def add_staff_hod(request):

@@ -1,17 +1,35 @@
 @use "./flex" as f;
 
-input[type="email"],
+input[type="text"],
 input[type = "password"] {
     // border-radius : 20px;
     outline : none;
-    width : 70%;
-    border: none;
-    border-bottom : 1px solid #66dbdfd8;
+    max-width : 76%;
+    min-width : 76%;
 
+    border: none;
+
+    border-bottom : 1px solid #061f20d9;
+
+    border-radius : 0px;
     caret-color: #ffbb00;
 
     background: #85858500;
 
+    &:active {
+        border: none;
+        background : #ffffff00;
+    }
+
+    &:focus {
+        background : #ffffff00;
+        border-color : indianred;
+        box-shadow : none;
+    }
+
 }
 
+input[type = "checkbox"] {
+    border-radius: 20px;
+}
 
